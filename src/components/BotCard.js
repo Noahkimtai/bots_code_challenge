@@ -9,13 +9,13 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({ bot, handleDelete}) {
+function BotCard({ bot, handleDelete, addToArmy}) {
   return (
     <div className="ui column">
       <div
         className="ui card"
         key={bot.id}
-        /* onClick={(e) => addToArmy(bot)} */
+        onClick={() => addToArmy(bot.id)}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />

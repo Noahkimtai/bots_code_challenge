@@ -6,18 +6,27 @@ function BotsPage() {
   //start here with your code for step one
   //create state to hold your bots data
   const [bots, setBots] = useState([])
+  const [botArmy, setBotArmy] =useState([])
   useEffect(() =>{
     fetch('http://localhost:8002/bots').then(res => res.json())
     .then(data => setBots(data))
   },[])
   const filterBots = (id) =>{
     setBots(bots.filter((bot) => bot.id !==id))
+    /* fetch('http://localhost:8002/bots') */ //make a delete method to db.json
+
+  }
+
+  const addedToArmy = (id) =>{
+    const newArray = bots.filter((bot) => bot.id ==id)
+    setBotArmy(newArray)
+    alert(botArmy[0].id)
   }
 
   return (
     <div>
       <YourBotArmy />
-      <BotCollection bots ={bots} filterBots ={filterBots}/>
+      <BotCollection bots ={bots} filterBots ={filterBots} addedToArmy={addedToArmy}/>
     </div>
   )
 }
