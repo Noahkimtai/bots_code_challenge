@@ -10,11 +10,14 @@ function BotsPage() {
     fetch('http://localhost:8002/bots').then(res => res.json())
     .then(data => setBots(data))
   },[])
+  const filterBots = (id) =>{
+    setBots(bots.filter((bot) => bot.id !==id))
+  }
 
   return (
     <div>
       <YourBotArmy />
-      <BotCollection bots ={bots}/>
+      <BotCollection bots ={bots} filterBots ={filterBots}/>
     </div>
   )
 }
