@@ -47,7 +47,9 @@ function BotCard({ bot, handleDelete, addToArmy}) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={() => handleDelete(bot.id)}
+                onClick={() => {handleDelete(bot.id)
+                  fetch(`http://localhost:8002/bots/${bot.id}`,{
+                    method: 'DELETE',})}}
               >
                 x
               </button>
