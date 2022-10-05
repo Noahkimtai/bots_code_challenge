@@ -18,12 +18,11 @@ function BotsPage() {
   const addedToArmy = (id) =>{
     const newArray = bots.filter((bot) => bot.id ==id)
     setBotArmy(newArray)
-    alert(botArmy[0].id)
   }
 
   return (
     <div>
-      <YourBotArmy />
+      <YourBotArmy bots={botArmy}/>
       <BotCollection bots ={bots} filterBots ={filterBots} addedToArmy={addedToArmy}/>
     </div>
   )
