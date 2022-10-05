@@ -13,9 +13,7 @@ function BotsPage() {
   },[])
   const filterBots = (id) =>{
     setBots(bots.filter((bot) => bot.id !==id))
-    /* fetch('http://localhost:8002/bots') */ //make a delete method to db.json
-
-  }
+    }
 
   const addedToArmy = (id) =>{
     const newArray = bots.filter((bot) => bot.id ==id)
