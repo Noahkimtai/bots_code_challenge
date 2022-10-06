@@ -17,7 +17,7 @@ function BotsPage() {
 
   const addedToArmy = (id) =>{
     const newArray = bots.filter((bot) => bot.id ==id)
-    setBotArmy(newArray)
+    setBotArmy((botArmy) =>botArmy.concat(newArray))
   }
 
   return (
